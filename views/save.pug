@@ -1,0 +1,26 @@
+extends base.pug
+block scripts 
+    script(src="../static/script.js")
+block style 
+    style 
+        include ../static/style.css
+block content 
+    nav.navbar
+        h2.list #[a(href="/").text Save notes] 
+        h2.list #[a(href="/seenotes").text See notes]
+    div.img
+      form(action="/" method="post" ).form
+        section#name 
+          div Name: 
+          input(type="text" name="Name" placeholder="Enter Name" style="height:40px;width:300px;margin-left:20px;border-style:solid;border-radius:5px; font-size:20px" 
+          required)
+        section#title 
+          div Title: 
+          input(type="text" name="Title" placeholder="Enter Title" style="height:40px;width:300px;margin-left:20px;border-style:solid;border-radius:5px;font-size:20px"
+          required)
+        section#data 
+          div Enter description: 
+          textarea(name="Desc" cols="70" rows="5"  style="padding-top:10px;border-radius:5px;border-style:solid;margin-left:20px;font-size:20px" placeholder="Enter notes description"
+          required) 
+        button(onclick='myFunction()').btn
+          | Save

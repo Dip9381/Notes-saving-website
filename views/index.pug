@@ -1,0 +1,24 @@
+doctype html
+html
+  head 
+    style 
+        include ../static/style.css
+  body 
+    nav.navbar
+        h2.list #[a(href="/").text Save notes] 
+        h2.list #[a(href="/seenotes").text See notes]
+    div.img
+      form(action="/" method="post" ).form
+        section#name 
+          div Name: 
+          input(type="text" name="Name" placeholder="Enter Name" style="height:40px;width:300px;margin-left:20px;border-style:solid;border-radius:5px; font-size:20px")
+        section#title 
+          div Title: 
+          input(type="text" name="Title" placeholder="Enter Title" style="height:40px;width:300px;margin-left:20px;border-style:solid;border-radius:5px;font-size:20px")
+        section#data 
+          div Enter description: 
+          textarea(name="Desc" cols="50" rows="10"  style="padding-top:10px;border-radius:5px;border-style:solid;margin-left:10px;font-size:20px" placeholder="Enter notes description") 
+        button(onclick='myFunction()').btn
+          | Save
+        script 
+          include ../static/script.js
